@@ -1,4 +1,4 @@
-## github-users-swift-ui
+## github-users-swiftui
 A simple SwiftUI/Combine app that outputs a list of GitHub users per search input.
 
 Requires Xcode 11 (beta) to build, and macOS Catalina (beta) to view layout previews.
@@ -14,4 +14,4 @@ Requires Xcode 11 (beta) to build, and macOS Catalina (beta) to view layout prev
 - [x] async image loading in a SwiftUI `List`
 - [ ] debounce search input to avoid rate limiting
 - [ ] empty list state
-- [ ] user detail modal
+- [x] user detail modal
