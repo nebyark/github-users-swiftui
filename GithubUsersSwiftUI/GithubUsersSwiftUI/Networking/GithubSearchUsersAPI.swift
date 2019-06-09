@@ -20,18 +20,18 @@ enum GithubUsersSearchAPI {
         }
     }
 
-    static func fetchImage(at url: URL, completion: @escaping (Image?) -> Void) {
+    static func fetchImage(at url: URL, completion: @escaping (Image?, Error?) -> Void) {
         if let image = ImageCache.shared.image(for: url) {
-            completion(image)
+            completion(image, nil)
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data, let image = UIImage(data: data) {
                 let result = Image(uiImage: image)
                 ImageCache.shared.store(image: result, url: url)
-                completion(result)
+                completion(result, error)
             } else {
-                completion(nil)
+                completion(nil, error)
             }
         }
         task.resume()
