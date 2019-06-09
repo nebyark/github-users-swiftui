@@ -34,7 +34,7 @@ struct RootView: View {
 struct RootView_Previews : PreviewProvider {
     static var previews: some View {
         let viewModel = GithubUsersViewModel()
-        let user = User(login: "nebyark", id: 1, nodeID: "", avatarURL: "", gravatarID: "", url: "", htmlURL: "someurl", followersURL: "", subscriptionsURL: "", organizationsURL: "", reposURL: "", receivedEventsURL: "", type: "", score: 12.0)
+        let user = GithubUser(login: "nebyark", id: 1, nodeID: "", avatarURL: "", gravatarID: "", url: "", htmlURL: "someurl", followersURL: "", subscriptionsURL: "", organizationsURL: "", reposURL: "", receivedEventsURL: "", type: "", score: 12.0)
         viewModel.users = [user]
         return RootView().environmentObject(viewModel)
     }

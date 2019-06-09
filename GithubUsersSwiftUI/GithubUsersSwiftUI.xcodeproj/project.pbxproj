@@ -17,6 +17,8 @@
 		A71763B422AB17330027272C /* GithubUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71763B322AB17330027272C /* GithubUsersViewModel.swift */; };
 		A71763B722AB18050027272C /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71763B622AB18050027272C /* UsersListView.swift */; };
 		A71763B922AB187B0027272C /* UserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71763B822AB187B0027272C /* UserRow.swift */; };
+		A7456D1522AC8C49001A3DCA /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7456D1422AC8C49001A3DCA /* UserDetailView.swift */; };
+		A7456D1722AC8CE6001A3DCA /* GithubUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7456D1622AC8CE6001A3DCA /* GithubUserViewModel.swift */; };
 		A77A43DC22ABAFDC00559A7C /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A43DB22ABAFDC00559A7C /* UserImageView.swift */; };
 		A77A43DE22ABB0A600559A7C /* UserImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A43DD22ABB0A600559A7C /* UserImageStore.swift */; };
 		A7808D9D22AB2DAC009DA905 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7808D9C22AB2DAC009DA905 /* URLSession+Extensions.swift */; };
@@ -36,6 +38,8 @@
 		A71763B322AB17330027272C /* GithubUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersViewModel.swift; sourceTree = "<group>"; };
 		A71763B622AB18050027272C /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		A71763B822AB187B0027272C /* UserRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRow.swift; sourceTree = "<group>"; };
+		A7456D1422AC8C49001A3DCA /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		A7456D1622AC8CE6001A3DCA /* GithubUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserViewModel.swift; sourceTree = "<group>"; };
 		A77A43DB22ABAFDC00559A7C /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		A77A43DD22ABB0A600559A7C /* UserImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageStore.swift; sourceTree = "<group>"; };
 		A7808D9C22AB2DAC009DA905 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			children = (
 				A71763B122AB16EC0027272C /* GithubUsers.swift */,
 				A71763B322AB17330027272C /* GithubUsersViewModel.swift */,
+				A7456D1622AC8CE6001A3DCA /* GithubUserViewModel.swift */,
 				A77A43DD22ABB0A600559A7C /* UserImageStore.swift */,
 			);
 			path = Model;
@@ -110,6 +115,7 @@
 				A71763B622AB18050027272C /* UsersListView.swift */,
 				A71763B822AB187B0027272C /* UserRow.swift */,
 				A77A43DB22ABAFDC00559A7C /* UserImageView.swift */,
+				A7456D1422AC8C49001A3DCA /* UserDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,10 +204,12 @@
 				A71763B722AB18050027272C /* UsersListView.swift in Sources */,
 				A7808D9D22AB2DAC009DA905 /* URLSession+Extensions.swift in Sources */,
 				A77A43DC22ABAFDC00559A7C /* UserImageView.swift in Sources */,
+				A7456D1522AC8C49001A3DCA /* UserDetailView.swift in Sources */,
 				A71763B222AB16EC0027272C /* GithubUsers.swift in Sources */,
 				A71763B922AB187B0027272C /* UserRow.swift in Sources */,
 				A717639F22AB16B60027272C /* SceneDelegate.swift in Sources */,
 				A71763A122AB16B60027272C /* RootView.swift in Sources */,
+				A7456D1722AC8CE6001A3DCA /* GithubUserViewModel.swift in Sources */,
 				A71763B422AB17330027272C /* GithubUsersViewModel.swift in Sources */,
 				A77A43DE22ABB0A600559A7C /* UserImageStore.swift in Sources */,
 				A7808D9F22AB9C52009DA905 /* GithubSearchUsersAPI.swift in Sources */,

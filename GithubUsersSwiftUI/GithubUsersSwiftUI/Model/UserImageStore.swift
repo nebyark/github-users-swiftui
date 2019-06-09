@@ -19,14 +19,11 @@ class UserImageStore: BindableObject {
             }
         }
     }
-    private var shouldFetch = true
 
     func load(image url: String) -> Self {
-        if image == nil, shouldFetch == true {
+        if image == nil {
             GithubUsersSearchAPI.fetchImage(at: URL(string: url)!) { image, error in
-                if error != nil || image == nil {
-                    self.shouldFetch = false
-                } else {
+                if let image = image {
                     self.image = image
                 }
             }

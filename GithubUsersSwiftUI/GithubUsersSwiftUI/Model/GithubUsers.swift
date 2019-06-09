@@ -12,7 +12,7 @@ struct GithubUsers: Codable {
 
     let totalCount: Int
     let incompleteResults: Bool
-    let items: [User]
+    let items: [GithubUser]
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -22,7 +22,7 @@ struct GithubUsers: Codable {
 
 }
 
-struct User: Codable, Identifiable {
+struct GithubUser: Codable, Identifiable {
 
     let login: String
     let id: Int
@@ -49,4 +49,30 @@ struct User: Codable, Identifiable {
         case type, score
     }
 
+}
+
+struct GithubUserDetail: Codable, Identifiable {
+
+    let login: String
+    let id: Int
+    let avatarURL: String
+    let type: String
+    let name: String?
+    let company: String?
+    let location: String?
+    let bio: String?
+    let publicRepos, publicGists, followers, following: Int
+    let createdAt, updatedAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case login, id
+        case avatarURL = "avatar_url"
+        case type
+        case name, company, location, bio
+        case publicRepos = "public_repos"
+        case publicGists = "public_gists"
+        case followers, following
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }

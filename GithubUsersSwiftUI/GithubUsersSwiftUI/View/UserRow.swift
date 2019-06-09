@@ -36,12 +36,22 @@ struct RatingView: View {
 
 struct UserRow : View {
 
-    let user: User
+    let user: GithubUser
     let imageStore = UserImageStore()
+    @State var shouldPresentModal = false
+    var modal: Modal {
+        let m = Modal(UserDetailView(userViewModel: GithubUserViewModel(user: user))) {
+            self.shouldPresentModal = false
+        }
+        return m
+    }
 
     var body: some View {
         HStack(alignment: .center, spacing: 12.0) {
             UserImageView(user: user, imageStore: imageStore)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(18.0)
+                .frame(width: 36.0, height: 36.0)
             VStack(alignment: .leading) {
                 Text(user.login)
                     .font(.headline)
@@ -52,7 +62,10 @@ struct UserRow : View {
             Spacer()
             Image(systemName: user.type == "User" ? "person" : "person.and.person")
             RatingView(score: user.score)
-        }.frame(height: 40.0)
+        }
+            .tapAction { self.shouldPresentModal = true }
+            .frame(height: 40.0)
+            .presentation(shouldPresentModal ? modal : nil)
     }
 
 }
@@ -60,7 +73,7 @@ struct UserRow : View {
 #if DEBUG
 struct UserRow_Previews : PreviewProvider {
     static var previews: some View {
-        let user = User(login: "nebyark", id: 1, nodeID: "", avatarURL: "", gravatarID: "", url: "", htmlURL: "https://someurl.com", followersURL: "", subscriptionsURL: "", organizationsURL: "", reposURL: "", receivedEventsURL: "", type: "", score: 12.0)
+        let user = GithubUser(login: "nebyark", id: 1, nodeID: "", avatarURL: "", gravatarID: "", url: "", htmlURL: "https://someurl.com", followersURL: "", subscriptionsURL: "", organizationsURL: "", reposURL: "", receivedEventsURL: "", type: "", score: 12.0)
         return UserRow(user: user)
             .frame(height: 80.0)
     }

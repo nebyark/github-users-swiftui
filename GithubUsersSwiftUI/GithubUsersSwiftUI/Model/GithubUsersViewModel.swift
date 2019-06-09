@@ -19,7 +19,7 @@ class GithubUsersViewModel: BindableObject {
             query()
         }
     }
-    var users: [User] = [] {
+    var users: [GithubUser] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.didChange.send(())
@@ -32,7 +32,8 @@ class GithubUsersViewModel: BindableObject {
             // see 51241500 https://developer.apple.com/documentation/xcode_release_notes/xcode_11_beta_release_notes/
 //             .debounce(for: 1.0, scheduler: RunLoop.main)
 //            .removeDuplicates()
-            .compactMap { URL(string: "https://api.github.com/search/users?q=\($0)") }
+            .filter { !$0.isEmpty }
+            .compactMap { GithubUsersSearchAPI.users(query: $0).url }
             .flatMap { url -> AnyPublisher<(Data, URLResponse), Error> in
                 return URLSession.shared.data(with: URLRequest(url: url))
             }
@@ -44,9 +45,9 @@ class GithubUsersViewModel: BindableObject {
     func query() {
         if text.isEmpty {
             users = []
-        } else {
-            queryText.send(text)
         }
+
+        queryText.send(text)
     }
 
 }
